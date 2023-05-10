@@ -1,0 +1,64 @@
+MAKEFILE                     General Commands Manual                     MAKEFILE
+
+Standard command : make
+            runs the default flag 'build'
+
+Flags :
+    build:
+        make build or make 
+
+        compiles all the .java files in the BUILD_DIR directory, BUILD_DIR
+        is by default the current directory, could be changed by adding 
+        BUILD_DIR=Your_Path to the command line.
+    
+    build_repo:
+        make build_repo
+
+        creates ./build repository with the proper permissions
+
+    source:
+        make source 
+
+        compiles all the .java files in src/ directory, the default 
+        directory is the src/ directory, could be changed by adding 
+        SRC_FILES=Your_src_files to the command line.
+
+    test:
+        make test 
+
+        compiles all the .java files in tst/ directory, the default 
+        directory is the src/ directory, could be changed by adding 
+        TST_FILES=Your_tst_files to the command line.
+
+    utest:
+        make utest UTEST=Test_Name OPT_TEST=Test_Option
+
+        compiles and runs all the unitary tests, the tests are the files
+        starting with Test*.class. It is possible to choose which test
+        you want to run by modifying the UTEST variable in the command line,
+        UTEST=Test_Name. You can also add options when executing by 
+        modifying the OPT_TEST variable OPT_TEST=-v or OPT_TEST=-verbose 
+        for more information about the tests.
+    
+    recette:
+        make run RUN=Your_program OPT_RUN=Program_Option
+
+        compiles and run all the programs that are intiated in the RUN variable,
+        your can choose which program by writing it's name in RUN=Your_Program,
+        and you can also add arguments or options to your program by modifying
+        OPT_RUN=Program_Option/Argument.
+
+        Note: the files are executed with the flags -ea for assert activation,
+        and -cp for dependent file paths.
+
+    man:
+        make man
+
+        displays the manual.
+
+    clean:
+        make clean
+
+        removes the build directory and all the .class files from the current 
+        repository.
+        
